@@ -17,3 +17,14 @@ HASH_SPACE = HASH_ALPHABET_LEN ** HASH_SIZE
 HASH_INDEX_TO_CHAR = {}
 for index, char in enumerate(HASH_ALPHABET):
     HASH_INDEX_TO_CHAR [index] = char
+
+HASH_CHAR_TO_INDEX = {}
+for index, char in enumerate(HASH_ALPHABET):
+    HASH_CHAR_TO_INDEX[char] = index
+
+VALID_TLDS = set()
+TLD_FILE_PATH = "./data/valid_tlds.txt"
+with open(TLD_FILE_PATH, encoding="utf-8") as tld_file:
+    for line in tld_file:
+        VALID_TLDS.add(line.strip().lower())
+        
