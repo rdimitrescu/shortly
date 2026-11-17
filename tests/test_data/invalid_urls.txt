@@ -1,0 +1,54 @@
+# --- wrong scheme ---
+http://example.com
+http://example.com:8080/api
+ftp://example.com/file.txt
+ssh://example.com
+sftp://example.com/data
+javascript:alert(1)
+data:text/html,<script>alert(1)</script>
+file:///etc/passwd
+mailto:someone@example.com
+ 
+# --- user:password@ in the host part (common phishing trick) ---
+https://user@example.com/
+https://admin:secret@example.com/private
+ 
+# --- missing host ---
+https://
+https:///path
+https://?q=1
+https://#fragment
+ 
+# --- no TLD / unknown TLD ---
+https://localhost
+https://localhost:3000
+https://intranet
+https://example
+https://example.notarealtld
+https://example.invalidtld
+https://example.123
+ 
+# --- IP addresses ---
+https://127.0.0.1/
+https://192.168.1.1/admin
+https://10.0.0.5:8080/
+https://[::1]/
+ 
+# --- malformed hosts ---
+https://exa mple.com
+https://example..com
+https://.example.com
+https://-example.com
+https://example.com:99999/
+https://example.com:abc/
+ 
+# --- characters not allowed raw ---
+https://example.com/path with spaces
+https://example.com/<script>
+https://example.com/"quoted"
+ 
+# --- broken structure ---
+https//example.com
+https:/example.com
+://example.com
+https://https://example.com

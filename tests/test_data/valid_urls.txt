@@ -1,0 +1,91 @@
+
+# --- different TLDs ---
+https://example.com
+https://example.org
+https://example.net
+https://github.com
+https://python.org
+https://upb.ro
+https://acs.pub.ro
+https://emag.ro
+https://bbc.co.uk
+https://spiegel.de
+https://lemonde.fr
+https://corriere.it
+https://nos.nl
+https://abc.net.au
+https://cbc.ca
+https://nhk.or.jp
+https://web.dev
+https://vercel.app
+https://bit.io
+https://news.ycombinator.com
+https://store.steampowered.com
+ 
+# --- www vs non-www ---
+https://www.example.com
+https://www.python.org
+https://www.wikipedia.org
+ 
+# --- subdomains ---
+https://docs.python.org
+https://api.github.com
+https://a.b.c.example.com
+https://eu-west-1.console.aws.amazon.com
+ 
+# --- paths ---
+https://example.com/
+https://example.com/page
+https://example.com/page/
+https://example.com/a/b/c/d/e/f
+https://docs.python.org/3/library/urllib.parse.html
+https://en.wikipedia.org/wiki/URL_shortening
+https://github.com/python/cpython/blob/main/Lib/urllib/parse.py
+https://example.com/file.tar.gz
+https://example.com/index.php
+https://example.com/~user/home
+https://example.com/a-b_c.d~e
+ 
+# --- query strings ---
+https://example.com/search?q=python
+https://example.com/search?q=python&lang=ro&page=2&sort=desc
+https://www.youtube.com/watch?v=dQw4w9WgXcQ
+https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=42s
+https://example.com/?a=1&a=2&a=3
+https://example.com/track?utm_source=newsletter&utm_medium=email&utm_campaign=nov2026
+ 
+# --- fragments ---
+https://example.com/page#section-2
+https://docs.python.org/3/library/stdtypes.html#str.rfind
+https://example.com/page?q=1#top
+ 
+# --- ports ---
+https://example.com:443/
+https://example.com:8443/admin
+ 
+# --- percent-encoding ---
+https://example.com/path%20with%20spaces
+https://example.com/search?q=hello%20world
+https://en.wikipedia.org/wiki/Bucure%C8%99ti
+https://example.com/search?q=c%23&tag=c%2B%2B
+ 
+# --- case (scheme/host case-insensitive, path case-sensitive) ---
+HTTPS://EXAMPLE.COM/page
+https://Example.Com/page
+https://example.com/Page
+ 
+# --- near-identical pairs (hash spread / collision tests) ---
+https://example.com/a
+https://example.com/b
+https://example.com/ab
+https://example.com/ba
+https://example.com/page1
+https://example.com/page10
+ 
+# --- no scheme ---
+example.com
+www.example.com
+example.com/page?q=1
+github.com/python/cpython
+  example.com/with-surrounding-spaces  
+ 
