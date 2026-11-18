@@ -3,6 +3,7 @@ import string
 # URL's only contain these charachters
 URL_ALPHABET = string.ascii_letters + string.digits + '.' + '-' + '_' + '~' + ':' + '?' +'/'
 URL_ALPHABET_LEN = len(URL_ALPHABET)
+MAX_URL_SIZE = 2048
 
 URL_CHAR_TO_INDEX = {}
 for index, char in enumerate(URL_ALPHABET):

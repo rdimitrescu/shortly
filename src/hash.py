@@ -23,6 +23,9 @@ def validate_url(url:str) -> str:
     if "://" not in url:
         url = "https://" + url
 
+    if len(url) > MAX_URL_SIZE:
+        raise ValueError("URL is longer than 2048 characters")
+
     if not validators.url(url):
         raise ValueError("Not a real URL")
 

@@ -1,4 +1,5 @@
 from hash import *
+SHORTLY_URL = "https://example.com/"
 
 def get_hash(url:str) -> str:
     try:
@@ -9,4 +10,10 @@ def get_hash(url:str) -> str:
     else:
         print("HASH_SUCCESFUL:", hash_url(url))
 
-    return hash_result
+    return SHORTLY_URL + hash_result
+
+def run_worker() -> None:
+    print(get_hash("https://github.com/rdimitrescu/shortly"))
+
+if __name__ == "__main__":
+    run_worker()
