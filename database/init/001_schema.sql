@@ -1,0 +1,8 @@
+CREATE TABLE link_entries (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    long_url TEXT NOT NULL,
+    url_hash CHAR(6) UNIQUE NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+    last_updated TIMESTAMPTZ NOT NULL,
+    click_count INT NOT NULL DEFAULT 0
+)
