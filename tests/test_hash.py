@@ -45,9 +45,9 @@ def test_valid_urls():
 
     assert succeses == total_tested, f"{total_tested - succeses} valid URLs were allowed to pass"
 
-@pytest.mark.parametrize("url_amount", [10_000, 25_000, 50_000, 75_000, 100_000])
+@pytest.mark.parametrize("url_amount", [50_000, 150_000, 250_000, 500_000, 750_000, 1_000_000])
 def test_url_colissions(url_amount:int):
-    data_path = "tests/test_data/100k_urls_clean.txt.gz"
+    data_path = "tests/test_data/1m_urls.txt.gz"
     
     if os.path.exists(data_path) == False:
         print("FAIL: CANNOT SOLVE FOR FILE: ", data_path)
