@@ -1,5 +1,5 @@
 from hash_alphabet import *
-from urllib.parse import urlsplit
+from urllib.parse import urlsplit, unquote
 import validators
 
 def hash_url(url:str) -> str:
@@ -22,6 +22,14 @@ def validate_url(url:str) -> str:
 
     if "://" not in url:
         url = "https://" + url
+
+    encode_split = url.split("%")
+    if len(encode_split) > 1:
+        for item in encode_split[1:]:
+            if len(item) < 2:
+                raise ValueError("Encoding charachters must have valid length")
+            if item[0] not in UNICODE_SYMBOLS or item[1] not in UNICODE_SYMBOLS:
+                raise ValueError("Encoding charachters must be uppercase letters or digits")
 
     if len(url) > MAX_URL_SIZE:
         raise ValueError("URL is longer than 2048 characters")

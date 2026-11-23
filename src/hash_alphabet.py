@@ -29,4 +29,6 @@ TLD_FILE_PATH = "./data/valid_tlds.txt"
 with open(TLD_FILE_PATH, encoding="utf-8") as tld_file:
     for line in tld_file:
         VALID_TLDS.add(line.strip().lower())
+
+UNICODE_SYMBOLS = string.digits + "ABCDEFabcdef"
         
