@@ -13,7 +13,7 @@ for index, char in enumerate(URL_ALPHABET):
 # Hashes and should only contain these charachters
 HASH_ALPHABET = string.ascii_letters + string.digits
 HASH_ALPHABET_LEN = len(HASH_ALPHABET)
-HASH_SIZE = 6
+HASH_SIZE = 5
 HASH_SPACE = HASH_ALPHABET_LEN ** HASH_SIZE
 
 HASH_INDEX_TO_CHAR = {}
