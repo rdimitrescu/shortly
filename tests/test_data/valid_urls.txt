@@ -87,7 +87,67 @@ example.com
 www.example.com
 example.com/page?q=1
 github.com/python/cpython
-  example.com/with-surrounding-spaces  
+  example.com/with-surrounding-spaces
+
+# --- @ in path (not credentials: comes after the first /) ---
+https://medium.com/@username/my-first-post-1a2b3c
+https://example.com/user@domain
+
+# --- + (plus, often means space in queries) ---
+https://example.com/c++/tutorial
+https://example.com/search?q=c++
+https://example.com/search?q=hello+world
+
+# --- parentheses ---
+https://en.wikipedia.org/wiki/Python_(programming_language)
+https://en.wikipedia.org/wiki/C_(programming_language)#History
+
+# --- sub-delimiters in paths: , ; ! $ ' * = ---
+https://example.com/a,b,c
+https://example.com/path;jsessionid=ABC123
+https://example.com/matrix;color=red;size=10/items
+https://example.com/wow!
+https://example.com/price$100
+https://example.com/it's-a-page
+https://example.com/files/*.txt
+https://example.com/path=with=equals
+https://maps.google.com/?q=44.4268,26.1025
+
+# --- every allowed symbol in one path ---
+https://example.com/~a!b$c&d'e(f)g*h+i,j;k=l:m@n
+
+# --- [ ] in query strings (PHP/Rails style arrays) ---
+https://example.com/?filter[name]=john&filter[age]=30
+https://example.com/?ids[]=1&ids[]=2
+
+# --- URL inside a query string ---
+https://example.com/?redirect=https://other.com/page
+https://example.com/?q=a%2Fb%3Fc%3D
+
+# --- percent-encoded non-English characters (upper and lower case hex) ---
+https://example.com/caf%C3%A9
+https://example.com/%E2%9C%93
+https://example.com/%e2%9c%93
+https://twitter.com/search?q=%23python&src=typed_query
+
+# --- internationalized domains in punycode form (café.com, bücher.de) ---
+https://xn--caf-dma.com
+https://xn--bcher-kva.de/page
+
+# --- fragment edge cases ---
+https://example.com/#/dashboard/settings
+https://example.com/page#:~:text=hello
+https://example.com/?
+https://example.com/#
+
+# --- odd but legal paths ---
+https://example.com//double//slashes
+https://example.com/./a/../b
+
+# --- real-world links ---
+https://www.amazon.com/dp/B08N5WRWNW?ref=ppx_yo2ov_dt_b_product_details&th=1
+https://drive.google.com/file/d/1aBcD-EfGh_IjKl/view?usp=sharing
+https://example.com:443/path?x=1#frag
 
 # --- valid (length <= 2048) ---
 # realistic long URL (pass): len=504
