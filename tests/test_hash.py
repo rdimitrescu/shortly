@@ -12,14 +12,12 @@ def test_invalid_urls():
             try:
                 validate_url(bad_url)
             except ValueError as error:
-                print("SUCCESS: CAUGHT INVALID URL:", bad_url, "with error code", error)
                 succeses += 1
             else:
                 print("FAIL: DIDN'T STOP INVALID URL:", bad_url)
             finally:
                 total_tested += 1
 
-    print("--------------------------------")
     assert succeses == total_tested, f"{total_tested - succeses} invalid URLs got through"
 
 def test_valid_urls():
@@ -35,19 +33,9 @@ def test_valid_urls():
                 validate_url(good_url)
             except ValueError as error:
                 print("FAIL: GOOD URL DIDN'T PASS VALIDATION:", good_url, "with error code", error)
-                succeses += 1
             else:
-                print("SUCCESS: GOOD URL PASSSED CHECKS:", good_url)
                 succeses += 1
             finally:
                 total_tested += 1
 
-    print("--------------------------------")
     assert succeses == total_tested, f"{total_tested - succeses} valid URLs were allowed to pass"
-
-def run_test_hash():
-    test_invalid_urls()
-    test_valid_urls()
-
-if __name__ == "__main__":
-    run_test_hash()

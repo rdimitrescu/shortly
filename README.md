@@ -35,7 +35,7 @@ Show each test and its result:
 pytest -v
 ```
 
-Show `print()` output from the tests (hidden by default):
+Show `print()` output from the tests (hidden by default), only failed testcases print status messages:
 ```bash
 pytest -s
 ```

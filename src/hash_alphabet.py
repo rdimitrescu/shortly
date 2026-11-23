@@ -1,7 +1,8 @@
 import string
 
 # URL's only contain these charachters
-URL_ALPHABET = string.ascii_letters + string.digits + '.' + '-' + '_' + '~' + ':' + '?' +'/'
+URL_SYMBOLS = "-._~:/?#[]@!$&'()*+,;=%"
+URL_ALPHABET = string.ascii_letters + string.digits + URL_SYMBOLS
 URL_ALPHABET_LEN = len(URL_ALPHABET)
 MAX_URL_SIZE = 2048
 
