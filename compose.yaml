@@ -9,3 +9,16 @@ services:
       - "5432:5432"
     volumes:
       - ./database/init:/docker-entrypoint-initdb.d
+
+  dead_letter: 
+    image: redis:7
+    command:
+      - redis-server
+      - --maxmemory
+      - 64mb
+      - --maxmemory-policy
+      - allkeys-lru
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./dead_letter_queue:/data

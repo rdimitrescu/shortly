@@ -3,6 +3,6 @@ CREATE TABLE link_entries (
     long_url TEXT NOT NULL,
     url_hash CHAR(5) UNIQUE NOT NULL,
     created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
-    last_updated TIMESTAMPTZ NOT NULL,
+    last_updated TIMESTAMPTZ NOT NULL DEFAULT now(),
     click_count INT NOT NULL DEFAULT 0
 )
